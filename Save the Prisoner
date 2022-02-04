@@ -1,0 +1,15 @@
+func saveThePrisoner(n int32, m int32, s int32) int32 {
+    var truecandy, result int32
+    s = s - 1
+    if s == 0 {
+        s = n
+    }
+    truecandy = m % n
+    fmt.Println("truecandy",truecandy)
+    result = truecandy + s 
+
+    for result> n {
+        result = result - n
+    }
+    return result
+}
