@@ -1,0 +1,13 @@
+func angryProfessor(k int32, a []int32) string {
+    var pcounter int32
+    for _, value := range a {
+        if value <= 0 {
+            pcounter = pcounter +1 
+        }
+    } 
+    if k <= pcounter {
+        return "NO"
+        
+    }
+    return "YES"
+}
