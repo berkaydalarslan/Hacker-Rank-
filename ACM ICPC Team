@@ -1,0 +1,27 @@
+func binaryOR (x,y string) int32 {
+    var counter int32
+    xr:=[]rune(x)
+    yr:=[]rune(y)
+    for i,_ := range xr {
+        if string(xr[i]) == "1" || string(yr[i]) == "1" {
+            counter++
+    }
+ }
+ return counter
+}
+
+func acmTeam(topic []string) []int32 {
+var max,counter int32
+var result []int32
+for i:=0 ; i < len(topic) ; i ++ {
+    for j:=i+1 ; j<len(topic) ; j ++ {
+        point:= binaryOR(topic[i],topic[j])
+        if point > max {
+            max = point
+            counter = 0
+        }
+        if point == max {
+            counter ++
+        }
+    }
+}
