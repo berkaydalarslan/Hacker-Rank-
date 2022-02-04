@@ -1,0 +1,33 @@
+func max (x []int32) int32 {
+    maxy:= x[0]
+    for _, value := range x {
+        if value > maxy {
+            maxy= value
+        }
+    }
+    return maxy
+}
+
+func pickingNumbers(a []int32) int32 {
+    var counter,bounter int32
+    var list []int32
+    for _, value := range a {  
+        for _, balue:= range a {
+            if value-1==balue {
+                counter ++ 
+            }else if value +1 == balue  {
+                bounter++
+            }else if value==balue {
+                counter++
+                bounter++
+            }
+             fmt.Println(value,balue,counter,bounter,"inside loop")
+        }
+        list = append(list,counter,bounter)
+        counter=0
+        bounter=0
+
+    }
+    return max(list)
+
+}
