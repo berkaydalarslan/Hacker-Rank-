@@ -1,0 +1,27 @@
+func transform (x string) []int {
+    var result []int
+    lent := math.Sqrt(float64(len(x)))
+    if int(lent)*int(lent) == len(x) {
+        result = append(result,int(lent),int(lent))
+        return result
+    }
+    result = append(result,int(lent),int(lent)+1)
+    return result
+    
+}
+func encrypt (x [][]string, row int, column int) string {
+    var temp,result string
+
+    for i:=0 ; i<column ; i++ {
+      for j:=0 ; j < row ; j++ {
+          if x[j][i] != " " {
+          temp = temp + x[j][i]
+          }
+          fmt.Println(j,"j",i,"i",temp,"temp")
+      }
+      fmt.Println(i,"i")
+      result = result + temp + " "
+      temp = ""
+}
+  return result
+}
