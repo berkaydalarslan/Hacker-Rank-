@@ -1,0 +1,44 @@
+func unify (x[]int32) []int32 {
+    var temp int32
+    var result  []int32
+
+    for _,v:= range x {
+    if v != temp {
+        result = append(result,v)
+    }
+    temp = v
+    
+}
+return result
+}
+
+func mysort(list []int32) []int32 {
+    for index, _ := range list {
+        for jindex, _ := range list {
+            if list[index] < list[jindex] {
+                list[index], list[jindex] = list[jindex], list[index]
+
+            }
+        }
+
+    }
+    return list
+}
+
+func cutTheSticks(arr []int32) []int32 {
+var list []int32
+lent:= int32(len(arr))
+result:=mysort(arr)
+myMap:= make (map[int32]int32)
+for _,value:= range result {
+    v,_:= myMap[value]
+    myMap[value] = v + 1
+}
+original:= unify(result)
+for _, v := range original {
+    list=append(list,lent)
+    lent= lent - myMap[v]
+}
+
+return list
+}
