@@ -1,0 +1,17 @@
+func taumBday(b int32, w int32, bc int32, wc int32, z int32) int64 {
+    var cost int64
+    bn:=int64(b)
+    wn:=int64(w)
+    bcn:=int64(bc)
+    wcn:=int64(wc)
+    zn:= int64(z)
+    if bc > wc + z {
+        cost = int64((bn+wn)*wcn + bn*zn)
+        return cost
+    }else if wc > bc + z {
+        cost= int64((bn+wn)*bcn + wn*zn)
+        return cost
+    }
+    cost = int64(bn*bcn + wn*wcn)
+return cost
+}
