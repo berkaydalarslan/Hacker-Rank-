@@ -1,0 +1,23 @@
+func elemsearch (x[]int32, k int32) int32 {
+    var result int32
+    for i,v := range x {
+        if k == v {
+            result = int32(i) + 1
+        }
+    }
+
+    return result
+}
+
+func permutationEquation(p []int32) []int32 {
+    var result []int32
+    var pcounter int32
+    for i, _ := range p {
+        pcounter= int32(i+1)
+        temp:= elemsearch(p,pcounter)
+        result = append(result,elemsearch(p,temp))
+        
+    }
+    return result
+
+}
