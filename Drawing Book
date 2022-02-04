@@ -1,0 +1,16 @@
+func pageCount(n int32, p int32) int32 {
+    var forward, backward int32
+
+ if p % 2 == 0 {
+     p = p + 1
+ }
+ if n % 2== 0 {
+     n=n+1
+ }
+ forward = (p - 1) /2
+ backward = (n - p) / 2
+ if forward < backward {
+     return forward
+ }
+ return backward
+}
