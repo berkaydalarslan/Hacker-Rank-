@@ -1,0 +1,11 @@
+func viralAdvertising(n int32) int32 {
+    var liked, shared, cum int32
+    shared  = 5
+    for i:= 1 ; int32(i)<= n ; i ++ {
+      liked = shared / 2 
+      shared = liked * 3 
+      cum = liked + cum
+    }
+    return cum
+
+}
