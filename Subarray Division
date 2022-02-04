@@ -1,0 +1,24 @@
+ func toplam (x [] int32) int32 {
+     var result int32
+     for _, value := range x {
+         result = value +result
+     }
+     return result
+ }
+
+func birthday(s []int32, d int32, m int32) int32 {
+
+    var counter int32
+    var temp []int32
+    for index, _ := range s {
+        temp = s[index:m]
+        if toplam (temp) == d {
+            counter ++ 
+        }else if m == int32(len(s)){
+            break
+        }
+        temp = nil
+        m++
+    }
+    return counter
+}
