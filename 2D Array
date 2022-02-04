@@ -1,0 +1,14 @@
+func hourglas (glas [][]int32) int32 {
+     result := glas[0][0] + glas[0][1] + glas [0][2] + glas [1][1] + glas[2][0] + glas[2][1] + glas[2][2]
+     return result
+ }
+ 
+ func comp (x []int32) int32 {
+     max:= x[0]
+     for index, _ := range x {
+         if x[index] > max {
+             max = x[index]
+         }
+     }
+     return  max
+ }
