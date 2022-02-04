@@ -1,0 +1,17 @@
+    var min,max,mincount,maxcount int32
+    var result []int32 
+    min = scores[0]
+    max = scores[0]
+    for _, value := range scores {
+        if value < min {
+            min = value
+            mincount++
+        }else if  value > max {
+            max = value
+            maxcount++
+        }
+    }
+    
+     result = append(result,maxcount,mincount)
+     return result
+}
